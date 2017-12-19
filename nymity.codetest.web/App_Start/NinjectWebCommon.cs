@@ -2,6 +2,8 @@ using nymity.codetest.domain.Interface.Repository;
 using nymity.codetest.domain.Interface.Service;
 using nymity.codetest.domain.Services;
 using nymity.codetest.infra.Repository;
+using System.Web.Http;
+using Ninject.Web.WebApi;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(nymity.codetest.web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(nymity.codetest.web.App_Start.NinjectWebCommon), "Stop")]
@@ -51,6 +53,7 @@ namespace nymity.codetest.web.App_Start
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 RegisterServices(kernel);
+                GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
                 return kernel;
             }
             catch
