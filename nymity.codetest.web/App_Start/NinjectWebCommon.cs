@@ -1,6 +1,7 @@
 using nymity.codetest.domain.Interface.Repository;
 using nymity.codetest.domain.Interface.Service;
 using nymity.codetest.domain.Services;
+using nymity.codetest.infra.Repository;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(nymity.codetest.web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(nymity.codetest.web.App_Start.NinjectWebCommon), "Stop")]
@@ -14,7 +15,6 @@ namespace nymity.codetest.web.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
-    using infra.Repository;
 
     public static class NinjectWebCommon 
     {
@@ -73,6 +73,7 @@ namespace nymity.codetest.web.App_Start
             kernel.Bind<IProductService>().To<ProductService>();
 
             kernel.Bind<IProductRepository>().To<ProductRepository>();
-        }        
+
+        }
     }
 }

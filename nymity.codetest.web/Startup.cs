@@ -1,7 +1,11 @@
-﻿using Microsoft.Owin;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(nymity.codetest.web.Startup))]
+[assembly: OwinStartup(typeof(nymity.codetest.web.Startup))]
+
 namespace nymity.codetest.web
 {
     public partial class Startup

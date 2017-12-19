@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nymity.codetest.domain", "n
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nymity.codetest.infra", "nymity.codetest.infra\nymity.codetest.infra.csproj", "{3FE817FF-6A5B-4830-9862-09A36728A30D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nymity.codetest.web", "nymity.codetest.web\nymity.codetest.web.csproj", "{567085DB-90D8-4CBA-A84B-1F75BA603952}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nymity.codetest.web", "nymity.codetest.web\nymity.codetest.web.csproj", "{CC8C2E97-5920-490F-8821-5DA589024362}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{3FE817FF-6A5B-4830-9862-09A36728A30D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FE817FF-6A5B-4830-9862-09A36728A30D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FE817FF-6A5B-4830-9862-09A36728A30D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{567085DB-90D8-4CBA-A84B-1F75BA603952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{567085DB-90D8-4CBA-A84B-1F75BA603952}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{567085DB-90D8-4CBA-A84B-1F75BA603952}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{567085DB-90D8-4CBA-A84B-1F75BA603952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC8C2E97-5920-490F-8821-5DA589024362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC8C2E97-5920-490F-8821-5DA589024362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC8C2E97-5920-490F-8821-5DA589024362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC8C2E97-5920-490F-8821-5DA589024362}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,6 @@
-﻿@model IEnumerable<nymity.codetest.domain.Model.Category>
+﻿@model PagedList.IPagedList<nymity.codetest.domain.Model.Category>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewBag.Title = "Index";
@@ -8,11 +10,11 @@
 
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CategoryName)
+        <th>            
+            Category
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            Description
         </th>
         <th></th>
     </tr>
@@ -27,12 +29,20 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.ActionLink("View Products", "Products", new {id = item.CategoryId}, new {@class = "productsByCategory"})                
+                @Html.ActionLink("View Products", "Products", new {id = item.CategoryId}, new {@class = "productsByCategory"})
             </td>
-        </tr>
+        </tr>      
     }
 
 </table>
+<br/>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
+
+
+
 
 <div id="Products"></div>
 
@@ -42,7 +52,7 @@
             $('.productsByCategory').on('click', function (e) {
                 $.get($(this).prop('href'),
                     function(response) {
-                        $('#Products').html(response);
+                        $('#Products').html(response);               
                     });
                 e.preventDefault();
             });  
