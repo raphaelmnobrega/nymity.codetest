@@ -6,13 +6,20 @@ using nymity.codetest.infra.Context;
 
 namespace nymity.codetest.infra.Repository
 {
-    public class CategoryRepository : ICategoryRepository
+    public class CategoryRepository : RepositoryBase<NorthwindContext>, ICategoryRepository
     {
-        private NorthwindContext db = new NorthwindContext();
+        public CategoryRepository(NorthwindContext context) : base(context)
+        {
+        }
 
         public ICollection<Category> GetAll()
         {
-            return db.Categories.ToList();
+            return Context.Categories.ToList();
+        }
+
+        public Category GetProducts(int categoryId)
+        {
+            return Context.Categories.Include("Products").First(c => c.CategoryId == categoryId);
         }
     }
 }

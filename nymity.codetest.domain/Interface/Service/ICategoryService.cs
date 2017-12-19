@@ -10,5 +10,6 @@ namespace nymity.codetest.domain.Interface.Service
     public interface ICategoryService
     {
         ICollection<Category> GetAll();
+        Category GetProducts(int categoryId);
     }
 }

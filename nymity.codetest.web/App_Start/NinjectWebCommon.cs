@@ -69,6 +69,10 @@ namespace nymity.codetest.web.App_Start
             kernel.Bind<ICategoryService>().To<CategoryService>();
 
             kernel.Bind<ICategoryRepository>().To<CategoryRepository>();
+
+            kernel.Bind<IProductService>().To<ProductService>();
+
+            kernel.Bind<IProductRepository>().To<ProductRepository>();
         }        
     }
 }

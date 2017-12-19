@@ -7,9 +7,8 @@ using nymity.codetest.domain.Model;
 
 namespace nymity.codetest.domain.Interface.Repository
 {
-    public interface ICategoryRepository
+    public interface IProductRepository
     {
-        ICollection<Category> GetAll();
-        Category GetProducts(int categoryId);
+        ICollection<Product> GetProductsByCategory(int categoryId);
     }
 }

@@ -5,9 +5,9 @@ namespace nymity.codetest.web.Controllers
 {
     public class ProductsController : Controller
     {
-        private ICategoryService _service;
+        private IProductService _service;
 
-        public ProductsController(ICategoryService service)
+        public ProductsController(IProductService service)
         {
             _service = service;
         }
@@ -19,9 +19,9 @@ namespace nymity.codetest.web.Controllers
         }
 
         [Authorize]
-        public ActionResult ProductByCategory()
+        public ActionResult ProductByCategory(int id)
         {
-            return View(_service.GetAll());
+            return View(_service.GetProductsByCategory(id));
         }
     }
 }

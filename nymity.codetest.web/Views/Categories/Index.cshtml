@@ -1,0 +1,51 @@
+﻿@model IEnumerable<nymity.codetest.domain.Model.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Categories</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("View Products", "Products", new {id = item.CategoryId}, new {@class = "productsByCategory"})                
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div id="Products"></div>
+
+@section scripts{
+    <script>
+        $(function() {
+            $('.productsByCategory').on('click', function (e) {
+                $.get($(this).prop('href'),
+                    function(response) {
+                        $('#Products').html(response);
+                    });
+                e.preventDefault();
+            });  
+        });
+    </script>
+}

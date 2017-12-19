@@ -23,5 +23,10 @@ namespace nymity.codetest.domain.Services
         {
             return _repository.GetAll();
         }
+
+        public Category GetProducts(int categoryId)
+        {
+            return _repository.GetProducts(categoryId);
+        }
     }
 }
