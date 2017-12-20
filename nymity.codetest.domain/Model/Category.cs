@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace nymity.codetest.domain.Model
 {
-    [DataContract]
+    //[DataContract]
     public class Category
     {
-        [DataMember]
+        //[DataMember]
         public int CategoryId { get; set; }
-        [DataMember]
+        //[DataMember]
         public string CategoryName { get; set; }
-        [DataMember]
+        //[DataMember]
         public string Description { get; set; }
-        [DataMember]
+        //[DataMember]
         public byte[] Picture { get; set; }
-        [DataMember]
+        //[DataMember]
         private ICollection<Product> products;
-        [DataMember]
+        //[DataMember]
         public virtual ICollection<Product> Products
         {
             get
