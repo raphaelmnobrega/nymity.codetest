@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.Owin;
 using nymity.codetest.domain.Model;
 using nymity.codetest.web.ViewModels;
 using Owin;
 
-[assembly: OwinStartup(typeof(nymity.codetest.web.Startup))]
-
+[assembly: OwinStartupAttribute(typeof(nymity.codetest.web.Startup))]
 namespace nymity.codetest.web
 {
     public partial class Startup

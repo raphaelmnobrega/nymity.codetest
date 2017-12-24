@@ -7,22 +7,19 @@ namespace nymity.codetest.infra.Context
     public class NorthwindContext : DbContext
     {
         public NorthwindContext()
-            :base("Northwind")
+            :base("NORTHWND")
         {
             
         }
-
-        public DbSet<Product> Products { get; set; }
+       
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Supplier> Suppliers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Configurations.Add(new CategoryConfiguration());          
-            modelBuilder.Configurations.Add(new ProductConfiguration());
-            modelBuilder.Configurations.Add(new SupplierConfiguration());            
+            modelBuilder.Configurations.Add(new ProductConfiguration());           
         }
 
     }

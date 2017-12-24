@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 using AutoMapper;
 using nymity.codetest.domain.Interface.Service;
@@ -17,33 +19,27 @@ namespace nymity.codetest.web.Controllers.Api
             _service = service;
         }
 
-        public IEnumerable<CategoryViewModel> Get()
+        public IHttpActionResult Get()
         {
-            var categories = Mapper.Map<IEnumerable<Category>,IEnumerable<CategoryViewModel>>(_service.GetAll());
-            return categories;
+            var categories = Mapper.Map<IEnumerable<Category>, IEnumerable<CategoryViewModel>>(_service.GetAll());
+            if (categories == null)
+            {
+                return NotFound();
+            }
+            return Ok(categories);
         }
 
         [HttpGet]
         [Route("{id:int}/products")]
-        public IEnumerable<ProductViewModel> GetProducts(int id)
+        public IHttpActionResult GetProducts(int id)
         {
             var products = Mapper.Map<IEnumerable<Product>,IEnumerable<ProductViewModel>>(_service.GetProducts(id).Products);
-            return products;
+            if (products == null)
+            {
+                return NotFound();
+            }
+            return Ok(products);
         }
 
-        // POST: api/Categories
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/Categories/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Categories/5
-        public void Delete(int id)
-        {
-        }
     }
 }

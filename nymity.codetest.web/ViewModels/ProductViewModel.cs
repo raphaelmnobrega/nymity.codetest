@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace nymity.codetest.web.ViewModels
+﻿namespace nymity.codetest.web.ViewModels
 {
     public class ProductViewModel
     {

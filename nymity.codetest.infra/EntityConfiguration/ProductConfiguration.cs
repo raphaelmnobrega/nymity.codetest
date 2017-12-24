@@ -23,7 +23,7 @@ namespace nymity.codetest.infra.EntityConfiguration
 
             // Foreign keys
             HasOptional(a => a.Category).WithMany(b => b.Products).HasForeignKey(c => c.CategoryId).WillCascadeOnDelete(false); // FK_Products_Categories
-            HasOptional(a => a.Supplier).WithMany(b => b.Products).HasForeignKey(c => c.SupplierId).WillCascadeOnDelete(false); // FK_Products_Suppliers
+            
         }
     }
 }
